@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+ <meta charset="UTF-8"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ <title>Document</title> 
+</head> 
+<body> 
+ <form id="f1"> 
+ <table> 
+ <tr> 
+ <td><label for="name">Name:</label></td> 
+ <td><input type="text" id="name" name="name" required></td> 
+ </tr> 
+ <tr> 
+ <td><label for="email">Email:</label></td> 
+ <td><input type="email" id="email" name="email" required></td> 
+ </tr> 
+ <tr> 
+ <td><label for="password">Password:</label></td> 
+ <td><input type="password" id="password" name="password" required></td> 
+ </tr> 
+ <tr> 
+ <td><button type="submit" onclick="validate()">Submit</button></td> 
+ </tr> 
+ </table> 
+ </form> 
+ <script> 
+ 
+ function validate(event) { 
+ event.preventDefault(); 
+ 
+ var name = document.getElementById("name").value; 
+ var email = document.getElementById("email").value; 
+ var password = document.getElementById("password").value; 
+ 
+ if (name === "" || email === "" || password === "") { alert("All fields are required."); 
+ } else { 
+ alert("Form submitted successfully!\nName: " + name + "\nEmail: " + email); 
+ document.getElementById("f1").reset(); 
+ } 
+ } 
+ document.getElementById("f1").addEventListener("submit",validate); 
+ </script> 
+ 
+ 
+</body> 
+</html>
